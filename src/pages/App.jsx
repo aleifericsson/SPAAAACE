@@ -4,7 +4,7 @@ import Home from './Home';
 import Unity from './Unity';
 import Navig from '../components/Navig';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import ChatBot from '../components/Chatbot';
+import ChatBot from './Chatbot';
 
 function App() {
   return (

@@ -22,3 +22,9 @@ html, body{
   padding: 5px;
   margin-right:10px;
 }
+
+
+.logo-container{
+  display: flex;
+  align-items: center;
+}
