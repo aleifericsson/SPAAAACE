@@ -3,7 +3,7 @@ html, body, #app, #app>div {
   width: 100%;
 }
 
-body{
+html, body{
   padding:0px;
   background-color: black;
 }
@@ -16,3 +16,9 @@ body{
   margin:0;
 }
 
+.logo{
+  width: 50px;
+  height: 50px;
+  padding: 5px;
+  margin-right:10px;
+}
