@@ -3,6 +3,7 @@ import About from "./About";
 import Home from "./Home";
 import Unity from "./Unity";
 import Navig from "../components/Navig";
+import Leaderboard from "./Leaderboard";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import FactMachine from "./FactMachine";
 
@@ -19,6 +20,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/unity" element={<Unity />} />
           <Route path="/fact-machine" element={<FactMachine />} />
+          <Route path="/leaderboard" element={<Leaderboard />} />
         </Routes>
       </Router>
     </div>
