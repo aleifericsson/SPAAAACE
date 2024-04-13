@@ -4,7 +4,7 @@ import Home from './Home';
 import Unity from './Unity';
 import Navig from '../components/Navig';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import ChatBot from './Chatbot';
+import FactMachine from './FactMachine';
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
         <Route path='/home' element={<Home />} />
         <Route path='/about' element={<About />} />
         <Route path='/unity' element={<Unity />} />
-        <Route path='/chatbot' element={<ChatBot />} />
+        <Route path='/fact-machine' element={<FactMachine />} />
       </Routes>
       </Router>
     </div>

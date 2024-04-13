@@ -24,7 +24,7 @@ function Navig() {
             <Nav.Link href="/home">Home</Nav.Link>
             <Nav.Link href="/unity">Unity Game</Nav.Link>
             <Nav.Link href="/about">About</Nav.Link>
-            <Nav.Link href="/chatbot">Chatbot</Nav.Link>
+            <Nav.Link href="/fact-machine">Fact Machine</Nav.Link>
 
             {/*
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">

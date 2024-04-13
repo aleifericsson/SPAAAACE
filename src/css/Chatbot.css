@@ -1,0 +1,13 @@
+.bot{
+    width: 50vw;
+    height: 50vh;
+    top: 50%;
+    left: 50%;
+}
+
+.bot-window{
+    position:relative;
+    display: flex;
+    justify-content: center;
+    top: 10vh;
+}
