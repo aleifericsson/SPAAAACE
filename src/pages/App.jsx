@@ -1,7 +1,7 @@
 import '../css/App.css'
 import About from './About';
 import Home from './Home';
-import Unity from './Unity';
+import Game from './Game';
 import Navig from '../components/Navig';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import FactMachine from './FactMachine';
@@ -17,7 +17,7 @@ function App() {
         <Route exact path='/' element={<Home />} />
         <Route path='/home' element={<Home />} />
         <Route path='/about' element={<About />} />
-        <Route path='/game' element={<Unity />} />
+        <Route path='/game' element={<Game />} />
         <Route path='/fact-machine' element={<FactMachine />} />
       </Routes>
       </Router>

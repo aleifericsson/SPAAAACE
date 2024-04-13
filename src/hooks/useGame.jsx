@@ -2,7 +2,7 @@ import { useState } from 'react';
 import json_questions from '../data/questions.json';
 import useTimer from './useTimer';
 
-const planets = [];
+let planets = [];
 
 const useGame = () => {
     const [nearest_planet, set_nearest_planet] = useState("sun");
@@ -66,10 +66,10 @@ function Question(planet, question, answers){
 }
 
 const generateQuestions = () =>{
-    myquestions = [];
+    let myquestions = [];
     json_questions.forEach(question => {
-        planets.append(question["planet"]);
-        myquestions.append(new Question(question["planet"],question["question"],question["answers"]));
+        planets.push(question["planet"]);
+        myquestions.push(new Question(question["planet"],question["question"],question["answers"]));
     })
     console.log(myquestions);
     return myquestions;
