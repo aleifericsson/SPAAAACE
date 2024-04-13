@@ -39,23 +39,3 @@ div{
   display: flex;
   align-items: center;
 }
-
-
-body {
-  cursor: url('/Users/affanimran/Desktop/hacking/src/assets/cursor/space-ship.png'), auto;
-  /* Fallback cursor */
-  /* cursor: url('default-cursor.png'), auto; */
-}
-
-
-.cursor{
-  background-color: black;
-  height: 32px;
-  width: 32px;
-  border-radius: 50%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  
-
-}

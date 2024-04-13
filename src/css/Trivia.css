@@ -11,3 +11,7 @@
     padding: 5px; /* Equal padding around each option */
   }
   
+
+h2, p{
+  color: black;
+}
