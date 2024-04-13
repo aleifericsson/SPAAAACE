@@ -6,8 +6,15 @@
 }
 
 .bot-window{
-    position:relative;
+    position:absolute;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     top: 10vh;
+    left: 50%;
+    transform: translate(-50%,0);
+}
+
+.theform{
+    padding: 5px;
 }
