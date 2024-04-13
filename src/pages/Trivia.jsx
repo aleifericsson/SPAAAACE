@@ -4,13 +4,14 @@ import "../css/Trivia.css";
 import { useGame } from "../hooks/useGame";
 
 function Trivia() {
-  const { questions, answer_question } = useGame();
+  const { total_score, questions, answer_question } = useGame();
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [isCorrect, setIsCorrect] = useState(null);
   const [answerSelected, setAnswerSelected] = useState(false);
+  const [score, set_score] = useState(0);
 
   const handleAnswer = (correct, answer, planet) => {
-    answer_question(correct, planet);
+    set_score(answer_question(correct, planet));
     if (!answerSelected) {
       setSelectedAnswer(answer);
       setIsCorrect(correct);
@@ -22,6 +23,7 @@ function Trivia() {
   return (
     <div className="container">
       <div className="question-box">
+        <h2>Your score: {total_score}</h2>
         {questions.map((ques, index) => (
           <div className="question" key={index}>
             <h2>{ques.question}</h2>
@@ -31,7 +33,7 @@ function Trivia() {
                 <Option
                   key={index}
                   answer={ans.text}
-                  onClick={() => handleAnswer(ans.correct, ans.text, ques.planet)}
+                  onClick={() => handleAnswer(ans.correct === "true" ? true : false, ans.text, ques.planet)}
                   isSelected={ans.text === selectedAnswer}
                   isCorrect={isCorrect}
                   disabled={answerSelected}

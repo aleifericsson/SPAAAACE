@@ -5,15 +5,15 @@ import useTimer from "./useTimer";
 let planets = [];
 
 const useGame = () => {
-  const [nearest_planet, set_nearest_planet] = useState("sun");
   const [show_question, set_show_question] = useState(false);
   const [total_score, set_total_score] = useState(0);
   const [questions, set_questions] = useState(generateQuestions());
+  const [current_planet, set_planet] = useState("Sun");
   const [quiz_active, set_quiz_active] = useState(false);
 
-  const start_question = () => {
+  const start_question = (planet_name) => {
     set_show_question((thing) => !thing);
-    const index = planets.indexOf(nearest_planet);
+    const index = planets.indexOf(planet_name);
     let temp = [...questions];
     temp[index].counting_down = true;
     temp[index].handleReset();
@@ -21,17 +21,9 @@ const useGame = () => {
     set_questions(temp);
   };
 
-  const find_index_of_correct = (answers) => {
-    for (let i = 0; i < 4; i++) {
-      if (answers[i].correct === true) {
-        return i;
-      }
-    }
-  };
-
   const answer_question = (answer, planet_name) => {
     const index = planets.indexOf(planet_name);
-    console.log(index);
+    set_planet(planet_name);
     let temp = [...questions];
     temp[index].answered = true;
     temp[index].counting_down = false;
@@ -40,15 +32,16 @@ const useGame = () => {
     }
     temp[index].handlePause();
     temp[index].timer = 10000 - temp[index].elapsedTime;
-    if (temp[index].correct) {
-      set_total_score((score) => score + questions[index].timer);
+    const temp2 = total_score + temp[index].timer
+    if (answer) {
+      set_total_score(temp2);
     }
-    console.log(temp);
+    console.log(temp2);
     set_questions(temp);
+    return temp2;
   };
 
   return {
-    nearest_planet,
     show_question,
     total_score,
     questions,
