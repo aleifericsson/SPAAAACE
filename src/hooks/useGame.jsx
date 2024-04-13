@@ -62,7 +62,7 @@ function Question(planet, question, answers) {
   this.question = question;
   this.answers = answers; // array of string
   this.timer = 10000; //10000 miliseconds = 10 seconds
-  this.correct = false;
+  this.correct = false; //ignore
   this.answered = false;
 
   const { elapsedTime, isRunning, handleStart, handlePause, handleReset } =
@@ -74,14 +74,20 @@ function Question(planet, question, answers) {
   this.handleReset = handleReset;
 }
 
-const generateQuestions = () =>{
-    let myquestions = [];
-    json_questions.forEach(question => {
-        planets.push(question["planet"]);
-        myquestions.push(new Question(question["planet"],question["question"],question["answers"]));
-    })
-    console.log(myquestions);
-    return myquestions;
-}
+const generateQuestions = () => {
+  let myquestions = [];
+  json_questions.forEach((question) => {
+    planets.push(question["planet"]);
+    myquestions.push(
+      new Question(
+        question["planet"],
+        question["question"],
+        question["answers"]
+      )
+    );
+  });
+  console.log(myquestions);
+  return myquestions;
+};
 
 export { useGame };
