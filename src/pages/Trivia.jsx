@@ -12,9 +12,10 @@ function Trivia() {
   //     "95 million miles",
   //   ]);
 
-  const { questions } = useGame();
+  const { questions, answer_question } = useGame();
 
   const handleAnswer = (userAnsStatus) => {
+    answer_question(userAnsStatus);
     if (userAnsStatus) {
       console.log("Correct");
     } else {

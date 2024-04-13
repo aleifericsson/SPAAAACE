@@ -34,8 +34,7 @@ const useGame = () => {
     let temp = [...questions];
     temp[index].answered = true;
     temp[index].counting_down = false;
-    let right_index = find_index_of_correct(temp[index].answers);
-    if (right_index == answer) {
+    if (answer) {
       temp[index].correct == true;
     }
     temp[index].handlePause();

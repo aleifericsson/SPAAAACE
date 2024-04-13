@@ -6,9 +6,9 @@
 .black-thing{
     position:absolute;
     width: 100vw;
-    height: 50px;
+    height: 75px;
     background-color: black;
-    top: calc(100vh - 75px - 50px);
+    top: calc(100vh - 75px);
 }
 
 .tit-container{

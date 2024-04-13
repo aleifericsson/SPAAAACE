@@ -63,7 +63,7 @@ export default function Leaderboard() {
   width: 100vw;
   height: 75px;
   background-color: black;
-  top: calc(100vh - 75px - 50px);
+  top: calc(100vh - 50px);
 }
 
 .table{
