@@ -20,6 +20,15 @@ function App() {
           <Route path="/unity" element={<Unity />} />
           <Route path="/fact-machine" element={<FactMachine />} />
         </Routes>
+      <Navig />
+      
+      <Routes>
+        <Route exact path='/' element={<Home />} />
+        <Route path='/home' element={<Home />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/game' element={<Unity />} />
+        <Route path='/fact-machine' element={<FactMachine />} />
+      </Routes>
       </Router>
     </div>
   );

@@ -1,4 +1,34 @@
 .solar3d{
-    width: 70vw;
-    height: 70vh;
+    width: 100vw;
+    height: calc(100vh - 75px);
+}
+
+.black-thing{
+    position:absolute;
+    width: 100vw;
+    height: 50px;
+    background-color: black;
+    top: calc(100vh - 75px - 50px);
+}
+
+.tit-container{
+    position: absolute;
+    left: 100px;
+    top: 50%;
+    transform: translate(0, -50%);
+    background-color: rgba(0,0,0,0.7);
+    padding: 50px;
+}
+
+.solar-window{
+    position: relative;
+}
+
+.big-title{
+    font-size: 50px;
+}
+
+.small-title{
+    font-size: 25px;
+    padding: 5px;
 }
