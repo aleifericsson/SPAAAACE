@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Option from "../components/Option";
 import "../css/Trivia.css";
+import { useGame } from "../hooks/useGame";
 
 function Trivia() {
   const [questionNumber, setQuestionNumber] = useState(1);
@@ -11,6 +12,8 @@ function Trivia() {
     "95 million miles",
   ]);
 
+  const { show_question, total_score, questions } = useGame();
+
   return (
     <div className="container">
       <div className="question-box">
@@ -20,8 +23,8 @@ function Trivia() {
         </div>
 
         <div className="options">
-          {options.map((option, index) => (
-            <Option key={index} opt={option} />
+          {questions.map((ques, index) => (
+            <Option key={index} question={ques} />
           ))}
         </div>
       </div>

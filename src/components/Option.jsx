@@ -1,14 +1,14 @@
 import Card from "react-bootstrap/Card";
 import "../css/Trivia.css";
 
-function TextExample({ opt }) {
+function TextExample({ question }) {
   return (
     <Card
       style={{ width: "18rem", height: "10rem" }}
       className="option-container"
     >
       <Card.Body>
-        <Card.Title className="option">{opt}</Card.Title>
+        <Card.Title className="option">{question}</Card.Title>
       </Card.Body>
     </Card>
   );
