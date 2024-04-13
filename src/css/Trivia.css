@@ -1,0 +1,13 @@
+/* Trivia.css */
+.options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns with equal width */
+    gap: 5px; /* Gap between grid items */
+    justify-items: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+  }
+  
+  .option-container {
+    padding: 5px; /* Equal padding around each option */
+  }
+  
