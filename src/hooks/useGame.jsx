@@ -29,8 +29,9 @@ const useGame = () => {
     }
   };
 
-  const answer_question = (answer) => {
-    const index = planets.indexOf(nearest_planet);
+  const answer_question = (answer, planet_name) => {
+    const index = planets.indexOf(planet_name);
+    console.log(index);
     let temp = [...questions];
     temp[index].answered = true;
     temp[index].counting_down = false;
@@ -42,6 +43,7 @@ const useGame = () => {
     if (temp[index].correct) {
       set_total_score((score) => score + questions[index].timer);
     }
+    console.log(temp);
     set_questions(temp);
   };
 
@@ -64,8 +66,7 @@ function Question(planet, question, answers) {
   this.correct = false; //ignore
   this.answered = false;
 
-  const { elapsedTime, isRunning, handleStart, handlePause, handleReset } =
-    useTimer(10000);
+  const { elapsedTime, isRunning, handleStart, handlePause, handleReset } = useTimer();
   this.elapsedTime = elapsedTime;
   this.isRunning = isRunning;
   this.handleStart = handleStart;
@@ -85,7 +86,6 @@ const generateQuestions = () => {
       )
     );
   });
-  console.log(myquestions);
   return myquestions;
 };
 

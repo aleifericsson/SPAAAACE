@@ -1,19 +1,222 @@
 [
     {
-        "planet":"sun",
-        "question": "how big?",
-        "answers": [{
-            "text":"1km",
-            "correct":false
-        },{
-            "text":"2km",
-            "correct":false
-        },{
-            "text":"3km",
-            "correct":false
-        },{
-            "text":"800000km",
-            "correct":true
-        }]
-    }
-]
+     "planet": "Sun",
+     "question": "What are some characteristics of Sun?",
+     "answers": [
+       {
+         "text": "The Sun is classified as a planet",
+         "correct": "false"
+       },
+       {
+         "text": "The Sun has the strongest gravitational pull in the solar system",
+         "correct": "true"
+       },
+       {
+         "text": "The Sun is famous for its prominent ring system",
+         "correct": "false"
+       },
+       {
+         "text": "The Sun emits light and heat, making it the primary source of energy for the solar system",
+         "correct": "true"
+       }
+     ]
+   }, 
+   {
+     "planet": "Mercury",
+     "question": "What are some characteristics of Mercury?",
+     "answers": [
+       {
+         "text": "Mercury is predominantly composed of gas",
+         "correct": "false"
+       },
+       {
+         "text": "It is the farthest planet from the Sun",
+         "correct": "false"
+       },
+       {
+         "text": "Mercury experiences extreme temperatures, being scorching during the day and freezing at night",
+         "correct": "true"
+       },
+       {
+         "text": "Its surface is marked by craters from impacts",
+         "correct": "true"
+       }
+     ]
+   },
+   {
+     "planet": "Venus",
+     "question": "What are some characteristics of Venus?",
+     "answers": [
+       {
+         "text": "Venus is the coldest planet in the solar system",
+         "correct": "false"
+       },
+       {
+         "text": "Despite its harsh conditions, Venus is dull and unremarkable in the night sky",
+         "correct": "false"
+       },
+       {
+         "text": "It has a thick cloud cover that traps heat",
+         "correct": "true"
+       },
+       {
+         "text": "The atmosphere of Venus contains sulfuric acid rain",
+         "correct": "true"
+       }
+     ]
+   },
+   {
+     "planet": "Earth",
+     "question": "Which of the following statements about Earth are true?",
+     "answers": [
+       {
+         "text": "Earth is the third planet from the Sun",
+         "correct": "true"
+       },
+       {
+         "text": "Earth lacks an atmosphere",
+         "correct": "false"
+       },
+       {
+         "text": "The rotation of Earth creates the phenomenon of day and night",
+         "correct": "true"
+       },
+       {
+         "text": " The color blue dominates Earth's appearance due to its vast deserts",
+         "correct": "false"
+       }
+     ]
+   },
+   {
+     "planet": "Mars",
+     "question": "What are some characteristics of Mars?",
+     "answers": [
+       {
+         "text": "Mars holds interest for astronomers due to its potential for hosting life and its unique features",
+         "correct": "true"
+       },
+       {
+         "text": "Mars is the hottest planet in the solar system",
+         "correct": "false"
+       },
+       {
+         "text": "Mars is the closest planet to the Sun",
+         "correct": "false"
+       },
+       {
+         "text": " Mars has no atmosphere",
+         "correct": "false"
+       }
+     ]
+   },
+   {
+     "planet": "Jupiter",
+     "question": "What are some characteristics of Jupiter?",
+     "answers": [
+       {
+         "text": "Jupiter is the largest planet in the solar system",
+         "correct": "true"
+       },
+       {
+         "text": "Jupiter is composed primarily of solid rock",
+         "correct": "false"
+       },
+       {
+         "text": "Jupiter is known as Earth's twin",
+         "correct": "false"
+       },
+       {
+         "text": "Jupiter's atmosphere contains sulfuric acid rain",
+         "correct": "false"
+       }
+     ]
+   },
+   {
+     "planet": "Saturn",
+     "question": "What are some characteristics of Saturn?",
+     "answers": [
+       {
+         "text": "Saturn is famous for its prominent ring system",
+         "correct": "true"
+       },
+       {
+         "text": "Saturn is the second-largest planet in the solar system",
+         "correct": "false"
+       },
+       {
+         "text": "Saturn is composed mostly of gas",
+         "correct": "true"
+       },
+       {
+         "text": "Saturn has numerous moons orbiting around it",
+         "correct": "true"
+       }
+     ]
+   },
+   {
+     "planet": "Uranus",
+     "question": "What are some characteristics of Uranus?",
+     "answers": [
+       {
+         "text": "Uranus is famous for its prominent ring system",
+         "correct": "true"
+       },
+       {
+         "text": "Uranus has a unique rotational axis",
+         "correct": "true"
+       },
+       {
+         "text": "Uranus is composed mostly of gas",
+         "correct": "true"
+       },
+       {
+         "text": "It is covered in thick clouds that trap heat",
+         "correct": "false"
+       }
+     ]
+   },
+   {
+     "planet": "Neptune",
+     "question": "What are some characteristics of Neptune?",
+     "answers": [
+       {
+         "text": "Neptune has a solid surface",
+         "correct": "false"
+       },
+       {
+         "text": "Neptune is the second-largest planet in the solar system",
+         "correct": "false"
+       },
+       {
+         "text": "Neptune has a highly elliptical orbit around the Sun",
+         "correct": "true"
+       },
+       {
+         "text": "Neptune has the strongest winds in the solar system",
+         "correct": "true"
+       }
+     ]
+   },
+   {
+     "planet": "Pluto",
+     "question": "What are some characteristics of Pluto?",
+     "answers": [
+       {
+         "text": "Pluto was discovered in the 19th century",
+         "correct": "true"
+       },
+       {
+         "text": "Pluto's surface is covered in water",
+         "correct": "false"
+       },
+       {
+         "text": "Pluto is located in the asteroid belt",
+         "correct": "false"
+       },
+       {
+         "text": "Pluto is classified as a dwarf planet",
+         "correct": "true"
+       }
+     ]
+   }
+ ]
