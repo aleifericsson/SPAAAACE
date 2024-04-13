@@ -5,6 +5,8 @@ import Game from './Game';
 import Navig from '../components/Navig';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import FactMachine from './FactMachine';
+import Leaderboard from './Leaderboard';
+import Trivia from './Trivia';
 
 function App() {
   return (

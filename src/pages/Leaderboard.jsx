@@ -1,11 +1,8 @@
+import Solar3D from "../components/Solar3D";
+
 export default function Leaderboard() {
   return (
     <>
-      <html>
-        <head>
-          <meta charSet="UTF-8" />
-          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-          <title>Quiz Leaderboard</title>
           <style>
             {`
             body {
@@ -60,11 +57,28 @@ export default function Leaderboard() {
               width: 30%;
               text-align: center;
             }
+
+.black-thing{
+  position:absolute;
+  width: 100vw;
+  height: 75px;
+  background-color: black;
+  top: calc(100vh - 75px - 50px);
+}
+
+.table{
+  width: 70vw;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
             `}
           </style>
-        </head>
-        <body>
-          <table>
+        <Solar3D />
+        <div className="black-thing"></div>
+          <table className="table">
             <caption>Top 10 Quiz Leaderboard</caption>
             <thead>
               <tr>
@@ -92,8 +106,6 @@ export default function Leaderboard() {
               {/* Add more rows for top 10 participants */}
             </tbody>
           </table>
-        </body>
-      </html>
     </>
   );
 }
