@@ -25,6 +25,7 @@ function Navig() {
             <Nav.Link href="/game">The Game</Nav.Link>
             <Nav.Link href="/leaderboard">Leaderboard</Nav.Link>
             <Nav.Link href="/fact-machine">Fact Machine</Nav.Link>
+            <Nav.Link href="/trivia">Trivia</Nav.Link>
             <Nav.Link href="/about">About</Nav.Link>
 
             {/*
