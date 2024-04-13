@@ -28,3 +28,10 @@ html, body{
   display: flex;
   align-items: center;
 }
+
+
+body {
+  cursor: url('/Users/affanimran/Desktop/hacking/src/assets/cursor/space-ship.png'), auto;
+  /* Fallback cursor */
+  /* cursor: url('default-cursor.png'), auto; */
+}
