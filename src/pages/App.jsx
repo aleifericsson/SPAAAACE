@@ -1,10 +1,10 @@
 import '../css/App.css'
-import About from '../pages/About';
-import Home from '../pages/Home';
-import Unity from '../pages/Unity';
-import Navig from './Navig';
-import Solar3D from './Solar3D';
+import About from './About';
+import Home from './Home';
+import Unity from './Unity';
+import Navig from '../components/Navig';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ChatBot from '../components/Chatbot';
 
 function App() {
   return (
@@ -12,15 +12,14 @@ function App() {
       <Router>
 
       <Navig />
-      <div style={{display: "flex", flexDirection:"column",justifyContent:"space-between"}}>
       
       <Routes>
         <Route exact path='/' element={<Home />} />
         <Route path='/home' element={<Home />} />
         <Route path='/about' element={<About />} />
         <Route path='/unity' element={<Unity />} />
+        <Route path='/chatbot' element={<ChatBot />} />
       </Routes>
-      </div>
       </Router>
     </div>
   )
