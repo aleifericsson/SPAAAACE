@@ -8,6 +8,10 @@ html, body{
   background-color: #39283e;
 }
 
+.unity{
+  height: calc(100vh - 75px);
+  width: 100vw;
+}
 
 .app{
   width: 100vw;

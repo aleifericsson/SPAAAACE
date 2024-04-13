@@ -1,7 +1,7 @@
 import "../css/App.css";
 import About from "./About";
 import Home from "./Home";
-import Unity from "./Unity";
+import Game from "./Game";
 import Navig from "../components/Navig";
 import Leaderboard from "./Leaderboard";
 
@@ -14,17 +14,16 @@ function App() {
     <div className="App">
       <div className="cursor"></div>
       <Router>
-        <Navig />
 
-        <Routes>
-          <Route exact path="/home" element={<Home />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/unity" element={<Unity />} />
-          <Route path="/fact-machine" element={<FactMachine />} />
-          <Route path="/leaderboard" element={<Leaderboard />} />
-          <Route path="/trivia" element={<Trivia />} />
-        </Routes>
+      <Navig />
+      
+      <Routes>
+        <Route exact path='/' element={<Home />} />
+        <Route path='/home' element={<Home />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/game' element={<Unity />} />
+        <Route path='/fact-machine' element={<FactMachine />} />
+      </Routes>
       </Router>
     </div>
   );
