@@ -14,14 +14,12 @@ function App() {
         <Navig />
 
         <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route path="/" element={<Home />} />
+          <Route exact path="/home" element={<Home />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/unity" element={<Unity />} />
           <Route path="/fact-machine" element={<FactMachine />} />
-          <Route path="/random" element={<About />} />
         </Routes>
-        <Navig />
       </Router>
     </div>
   );
