@@ -12,19 +12,24 @@ function Trivia() {
     "95 million miles",
   ]);
 
-  const { show_question, total_score, questions } = useGame();
+  const { questions } = useGame();
 
   return (
     <div className="container">
       <div className="question-box">
         <div className="question-number">Question {questionNumber} of 10</div>
+
+        {questions.map((ques, index) => (
+          <h2>hello</h2>
+        ))}
+
         <div className="question">
           <h2>How far is the Earth from the Sun?</h2>
         </div>
 
         <div className="options">
           {questions.map((ques, index) => (
-            <Option key={index} question={ques} />
+            <Option key={index} question={ques.question} />
           ))}
         </div>
       </div>
