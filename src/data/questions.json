@@ -2,7 +2,18 @@
     {
         "planet":"sun",
         "question": "how big?",
-        "answers": ["1km","2km","3km","800000000km"],
-        "right_answer": 3
+        "answers": [{
+            "text":"1km",
+            "correct":false
+        },{
+            "text":"2km",
+            "correct":false
+        },{
+            "text":"3km",
+            "correct":false
+        },{
+            "text":"800000km",
+            "correct":true
+        }]
     }
 ]

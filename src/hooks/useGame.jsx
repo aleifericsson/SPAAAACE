@@ -21,30 +21,41 @@ const useGame = () => {
         set_questions(temp);
     }
 
+    const find_index_of_correct = (answers) => {
+        for(let i = 0; i < 4; i++){
+            if (answers[i].correct === true){
+                return i
+            }
+        }
+    }
+
     const answer_question = (answer) => {
         const index = planets.indexOf(nearest_planet);
         let temp = [...questions];
-        temp[index].user_answer = answer;
+        temp[index].answered= true;
         temp[index].counting_down = false;
-        if (temp[index].right_answer == answer){
+        let right_index = find_index_of_correct(temp[index].answers)
+        if (right_index == answer){
             temp[index].correct == true;
-        };
+        }
         temp[index].handlePause();
         temp[index].timer = 10000 - temp[index].elapsedTime;
+        if (temp[index].correct){
+            set_total_score(score => score+questions[index].timer);
+        }
         set_questions(temp);
     }
 
     return({nearest_planet, show_question, total_score, questions, quiz_active, start_question, answer_question})
 }
 
-function Question(planet, question, answers, right_answer){
+function Question(planet, question, answers){
     this.planet = planet;
     this.question = question;
     this.answers = answers; // array of string
-    this.right_answer = right_answer; // number: 0 to 3
     this.timer = 10000; //10000 miliseconds = 10 seconds
-    this.user_answer = -1; //set to 0 to 3 if answered, otherwise it is -1
     this.correct = false;
+    this.answered = false;
 
     const { elapsedTime, isRunning, handleStart, handlePause, handleReset } = useTimer(10000);
     this.elapsedTime = elapsedTime;
@@ -58,7 +69,7 @@ const generateQuestions = () =>{
     myquestions = [];
     json_questions.forEach(question => {
         planets.append(question["planet"]);
-        myquestions.append(new Question(question["planet"],question["question"],question["answers"],question["right_answer"]));
+        myquestions.append(new Question(question["planet"],question["question"],question["answers"]));
     })
     console.log(myquestions);
     return myquestions;
