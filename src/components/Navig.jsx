@@ -1,20 +1,23 @@
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Link } from 'react-router-dom';
-import Home from '../pages/Home';
-import logo from "../assets/favicon/android-chrome-512x512.png"
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Link } from "react-router-dom";
+import Home from "../pages/Home";
+import logo from "../assets/favicon/android-chrome-512x512.png";
 
 function Navig() {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
-      <img className = "logo" src = {logo}/>
+        <Nav.Link href="/home">
+          <div className="logo-container">
+            <img className="logo" src={logo} />
+            <Navbar.Brand>Space Game</Navbar.Brand>
+          </div>
+        </Nav.Link>
 
-        
-        <Link to={Home}><Navbar.Brand href="#home">Space Game</Navbar.Brand></Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
@@ -22,7 +25,7 @@ function Navig() {
             <Nav.Link href="/unity">Unity Game</Nav.Link>
             <Nav.Link href="/about">About</Nav.Link>
             <Nav.Link href="/chatbot">Chatbot</Nav.Link>
-            
+
             {/*
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
