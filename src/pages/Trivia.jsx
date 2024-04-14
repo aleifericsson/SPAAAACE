@@ -27,7 +27,6 @@ function Trivia() {
       setSelectedAnswer(answer);
       setIsCorrect(correct);
       setAnswerSelected(true); // Disable further selection
-      console.log(correct ? "Correct" : "Incorrect");
     }
   };
 
@@ -79,9 +78,10 @@ const renderQuestion = (ques, index) => {
 }
 
 const next_q = () =>{
-  if (current_question !== 10){
     increment_q();
-  }
+  
+  
+  console.log(total_score);
   setIsCorrect(null);
   setAnswerSelected(false);
   setSelectedAnswer(null);

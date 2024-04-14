@@ -1,9 +1,11 @@
 import Solar3D from "../components/Solar3D";
-import ldata from "../data/leaderboard_data.json";
+import { useGame } from "../hooks/useGame";
 
 export default function Leaderboard() {
-  const leaderboardData = ldata
-  console.log(leaderboardData)
+  const {leaderboard} = useGame();
+
+  const leaderboardData = leaderboard;
+  console.log(leaderboard)
   return (
     <>
           <style>

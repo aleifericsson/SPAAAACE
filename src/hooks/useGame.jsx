@@ -1,8 +1,12 @@
 import { useState } from "react";
 import json_questions from "../data/questions.json";
 import useTimer from "./useTimer";
+import { saveAs } from 'file-saver';
+import ldata from "../data/leaderboard_data.json";
 
 let planets = [];
+
+let raw_score = 7;
 
 const useGame = () => {
   const [show_question, set_show_question] = useState(false);
@@ -12,7 +16,7 @@ const useGame = () => {
   const [quiz_active, set_quiz_active] = useState(false);
   const [prev_time, set_prev_time] = useState(0);
   const [name, setName] = useState(null);
-
+  const [leaderboard, setLeaderboard] = useState(ldata);
   
   const { elapsedTime, isRunning, handleStart, handlePause, handleReset } = useTimer();
 
@@ -43,9 +47,22 @@ const useGame = () => {
     if (answer) {
       set_total_score(temp2);
     }
+    raw_score = temp2;
     set_questions(temp);
     return temp2;
   };
+
+  const saveScore = (name) => {
+    let temp = [...leaderboard];
+    console.log(temp[9].score)
+    console.log(raw_score)
+        if (parseInt(temp[9].score) <= raw_score){
+            temp[9] = {name,score:raw_score}
+            temp.sort((a, b) => b.score - a.score);
+            setLeaderboard(temp);
+            console.log(temp);
+        }
+  }
 
   return {
     show_question,
@@ -56,7 +73,9 @@ const useGame = () => {
     current_question,
     increment_q,
     name,
-    setName
+    setName,
+    leaderboard,
+    saveScore
   };
 };
 

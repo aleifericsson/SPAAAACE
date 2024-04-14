@@ -1,12 +1,12 @@
 [
-    { "name": "John", "score": "10000" },
-    { "name": "Sarah", "score": "9999" },
-    { "name": "Emma", "score": "9998" },
-    { "name": "Michael", "score": "9997" },
-    { "name": "Jessica", "score": "9996" },
-    { "name": "David", "score": "9995" },
-    { "name": "Emily", "score": "9994" },
-    { "name": "Matthew", "score": "9993" },
-    { "name": "Olivia", "score": "9992" },
-    { "name": "Daniel", "score": "9991" }
+    { "name": "John", "score": "63348" },
+    { "name": "Sarah", "score": "62298" },
+    { "name": "Emma", "score": "59782" },
+    { "name": "Michael", "score": "54890" },
+    { "name": "Jessica", "score": "54628" },
+    { "name": "David", "score": "52123" },
+    { "name": "Emily", "score": "47089" },
+    { "name": "Matthew", "score": "41092" },
+    { "name": "Olivia", "score": "39878" },
+    { "name": "Daniel", "score": "21322" }
   ]
