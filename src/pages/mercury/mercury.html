@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homepage</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #000; /* Set background color to black */
+    }
+    
+    .iframe-container {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+    }
+
+    iframe {
+      width: 300px; /* Adjust the width as needed */
+      height: 400px; /* Adjust the height as needed */
+      border: none;
+    }
+
+    #container {
+      margin: 0 auto;
+      max-width: 1200px;
+      padding: 20px;
+      background-color: #000;
+    }
+
+    .photo-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .photo {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      width: 250px;
+      height: 250px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .photo:hover img {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div class="photo-gallery">
+      <div class="photo">
+        <img src="mercury1.jpg" alt="Photo 1">
+      </div>
+      <div class="photo">
+        <img src="mercury2.jpg" alt="Photo 2">
+      </div>
+      <div class="photo">
+        <img src="mercury3.jpg" alt="Photo 3">
+      </div>
+      <div class="photo">
+        <img src="mercury4.jpg" alt="Photo 4">
+      </div>
+      <div class="photo">
+        <img src="mercury5.jpg" alt="Photo 5">
+      </div>
+      <div class="photo">
+        <img src="mercury6.jpg" alt="Photo 6">
+      </div>
+    
+    </div>
+  </div>
+  <div class="iframe-container">
+    <iframe src="https://console.dialogflow.com/api-client/demo/embedded/b10a1398-827b-4626-ba50-087c741be3e5"></iframe>
+  </div>
+</body>
+</html>
