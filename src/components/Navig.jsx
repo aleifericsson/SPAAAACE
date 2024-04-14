@@ -14,7 +14,7 @@ function Navig() {
         <Nav.Link href="/home">
           <div className="logo-container">
             <img className="logo" src={logo} />
-            <Navbar.Brand>Space Game</Navbar.Brand>
+            <Navbar.Brand>SPAAAACE</Navbar.Brand>
           </div>
         </Nav.Link>
 
