@@ -3,6 +3,7 @@ import Option from "../components/Option";
 import "../css/Trivia.css";
 import { useGame } from "../hooks/useGame";
 import Button from 'react-bootstrap/Button';
+import useTimer from "../hooks/useTimer";
 
 function Trivia() {
   const { total_score, questions, answer_question, current_question, increment_q } = useGame();
@@ -11,6 +12,7 @@ function Trivia() {
   const [isCorrect, setIsCorrect] = useState(null);
   const [answerSelected, setAnswerSelected] = useState(false);
   const [score, set_score] = useState(0);
+  const {elapsedTime} = useTimer();
 
   const handleAnswer = (correct, answer, planet) => {
     set_score(answer_question(correct, planet));
@@ -22,6 +24,23 @@ function Trivia() {
     }
   }
 
+
+const renderPicture = (index) => {
+  const src_list=[
+    "https://www.icegif.com/wp-content/uploads/2023/10/icegif-588.gif",
+    "https://64.media.tumblr.com/b33c7d52e3d8a69c3c7bacf22565aa48/tumblr_mid0z4TjGC1s3yr8vo1_400.gif",
+    "https://i.pinimg.com/originals/6f/8c/da/6f8cda99bb66d88fd6d666fb025a0817.gif",
+    "https://upload.wikimedia.org/wikipedia/commons/7/7f/Rotating_earth_animated_transparent.gif",
+    "https://media.tenor.com/SqJHatCJ40cAAAAi/mars.gif",
+    "https://i.gifer.com/WME4.gif",
+    "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHc5YXlzNzZyNjhteDRlcnJoaWhudHN3eHpwaDlhZjc0a25yODFodiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7buctjKD8g5r4544/giphy.gif",
+    "https://i.gifer.com/PAx.gif",
+    "https://thebluemoonofneptune.com/wp-content/uploads/2019/08/Neptune.gif",
+    "https://media.tenor.com/KnfMJBmhWuMAAAAj/jo-moon.gif"
+
+  ]
+  return(<img src = {src_list[index]} className="gifs"/>)
+}
   
 
 const renderQuestion = (ques, index) => {
@@ -31,7 +50,7 @@ const renderQuestion = (ques, index) => {
     <div className="question" key={index}>
     <p>Question {index+1} of 10</p>
     <h2>{ques.question}</h2>
-    <p>{ques.planet}</p>
+    {renderPicture(index)}
     <div className="choices">
       {ques.answers.map((ans, index) => (
         <Option
@@ -44,7 +63,7 @@ const renderQuestion = (ques, index) => {
         />
       ))}
     </div>
-  <p>Time left: {ques.timer}</p>
+  <p>Time left: {(ques.timer/1000).toFixed(2)+" s"}</p>
   </div>
   )
   
@@ -69,7 +88,7 @@ const next_q = () =>{
     else{
       if (current_question === -1){
       return (
-        <Button variant="light" className="next-question" onClick={next_q}>Next Question</Button>
+        <Button variant="light" className="next-question" onClick={next_q}>Start Quiz</Button>
       )
       }
     }

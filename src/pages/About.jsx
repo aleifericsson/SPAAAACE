@@ -1,10 +1,23 @@
 export default function About() {
 
     return (
-      <div>
-        Credits:  <br />
-        icon: https://www.flaticon.com/free-icon/solar-system_3049498 by Freepik <br />
-        space 3d: https://community.spline.design/file/c94b4fa6-ae38-47ef-9c7f-f397ca1c9b65 by caroline
+      <div className="about-window">
+        <div className="about-window2">
+        <div className = "about-text">
+          <h2 className="in-about">Produced by Quadruple A Game</h2>
+          
+        <p className="in-about">Alif, Affan, Affan, Arnav</p>
+        <br />
+        Asset credits:  <br />
+        <p className="in-about">
+        Icon: Freepik, freepik.com <br />
+        Space 3d model: caroline, spline.design <br />
+        Space Background: Felix Mittermeier, pexels.com <br /> <br />
+        </p>
+
+        All other assets were produced by us.
+        </div>
+      </div>
       </div>
     );
   }

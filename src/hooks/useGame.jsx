@@ -10,19 +10,19 @@ const useGame = () => {
   const [questions, set_questions] = useState(generateQuestions());
   const [current_question, set_cur_ques] = useState(-1);
   const [quiz_active, set_quiz_active] = useState(false);
+  const [prev_time, set_prev_time] = useState(0);
 
-  const start_question = (planet_name) => {
-    set_show_question((thing) => !thing);
-    const index = planets.indexOf(planet_name);
-    let temp = [...questions];
-    temp[index].counting_down = true;
-    temp[index].handleReset();
-    temp[index].handleStart();
-    set_questions(temp);
-  };
+  
+  const { elapsedTime, isRunning, handleStart, handlePause, handleReset } = useTimer();
 
   const increment_q = () => {
+    let index = current_question+1;
     set_cur_ques(thing => thing+1);
+    let temp = [...questions];
+    temp[index].counting_down = true;
+    handleReset();
+    handleStart();
+    set_questions(temp);
   }
 
   const answer_question = (answer, planet_name) => {
@@ -33,13 +33,15 @@ const useGame = () => {
     if (answer) {
       temp[index].correct == true;
     }
-    temp[index].handlePause();
-    temp[index].timer = 10000 - temp[index].elapsedTime;
+    handlePause();
+    const true_time = elapsedTime - prev_time
+    set_prev_time(elapsedTime)
+    temp[index].timer = 10000 - true_time;
+    if (temp[index].timer < 0) temp[index].timer = 0
     const temp2 = total_score + temp[index].timer
     if (answer) {
       set_total_score(temp2);
     }
-    console.log(temp2);
     set_questions(temp);
     return temp2;
   };
@@ -49,7 +51,6 @@ const useGame = () => {
     total_score,
     questions,
     quiz_active,
-    start_question,
     answer_question,
     current_question,
     increment_q
@@ -63,13 +64,6 @@ function Question(planet, question, answers) {
   this.timer = 10000; //10000 miliseconds = 10 seconds
   this.correct = false; //ignore
   this.answered = false;
-
-  const { elapsedTime, isRunning, handleStart, handlePause, handleReset } = useTimer();
-  this.elapsedTime = elapsedTime;
-  this.isRunning = isRunning;
-  this.handleStart = handleStart;
-  this.handlePause = handlePause;
-  this.handleReset = handleReset;
 }
 
 const generateQuestions = () => {
