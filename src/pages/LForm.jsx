@@ -21,24 +21,37 @@ const LForm = () => {
   };
 
   const writeData = (e) => {
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i].name === name) {
-          // If the score is higher, update the score
-          if (score > arr[i].score) {
-            arr[i].score = score;
-            // Write the updated array to a file
-            writeToFile(arr);
-            return "Score updated successfully.";
-          } else {
-            return "Score is not higher than the existing score.";
-          }
+        for (let i = 0; i < arr.length; i++) {
+            let updated = false;
+    
+        // Loop through the array to find the object with the matching name
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i].name === name) {
+            // If the score is higher, update the score
+            if (score > arr[i].score) {
+                arr[i].score = score;
+                updated = true;
+                break;
+            } else {
+                console.log("Score is not higher than the existing score.");
+                return;
+            }
+            }
         }
-      }
-      // If the name is not found, add a new object with the name and score
-      arr.push({ name, score });
-      // Write the updated array to a file
-      writeToFile(arr);
-  }
+        
+        // If the name is not found, add a new object with the name and score
+        if (!updated) {
+            arr.push({ name, score });
+        }
+
+        // Sort the array by score in descending order
+        arr.sort((a, b) => b.score - a.score);
+
+        // Write the updated array to a file
+        writeToFile(arr);
+        console.log("Scores updated and sorted successfully.");
+    }
+    }
 
   const writeToFile = (arr) => {
     // Convert the array to JSON

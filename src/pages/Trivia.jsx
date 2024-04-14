@@ -113,10 +113,6 @@ const next_q = () =>{
 
   return (
     <>
-      <div className="name">
-        <input type="text" placeholder="Name..." onSubmit={handleName} />
-        <button type="submit">Enter</button>
-      </div>
       <div className="user-name"></div>
       <div className="trivia-app">
         <div className="container trivia">
