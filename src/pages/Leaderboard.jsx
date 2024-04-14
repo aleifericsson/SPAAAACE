@@ -1,6 +1,9 @@
 import Solar3D from "../components/Solar3D";
+import ldata from "../data/leaderboard_data.json";
 
 export default function Leaderboard() {
+  const leaderboardData = ldata
+  console.log(leaderboardData)
   return (
     <>
           <style>
@@ -79,33 +82,25 @@ export default function Leaderboard() {
         <Solar3D />
         <div className="black-thing-2"></div>
           <table className="table">
-            <caption>Top 10 Quiz Leaderboard</caption>
-            <thead>
-              <tr>
-                <th className="rank">Rank</th>
-                <th className="name">Name</th>
-                <th className="score">Score</th>
+          <caption>Top 10 Quiz Leaderboard</caption>
+          <thead>
+            <tr>
+              <th className="rank">Rank</th>
+              <th className="name">Name</th>
+              <th className="score">Score</th>
+            </tr>
+          </thead>
+          <tbody>
+            {leaderboardData.map((participant, index) => {
+              return(
+              <tr key={index}>
+                <td>{index + 1}</td>
+                <td>{participant.name}</td>
+                <td>{participant.score}</td>
               </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>1</td>
-                <td>John</td>
-                <td>95%</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>Sarah</td>
-                <td>90%</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Emma</td>
-                <td>85%</td>
-              </tr>
-              {/* Add more rows for top 10 participants */}
-            </tbody>
-          </table>
+            )})}
+          </tbody>
+        </table>
     </>
   );
 }

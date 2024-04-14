@@ -11,6 +11,7 @@ const useGame = () => {
   const [current_question, set_cur_ques] = useState(-1);
   const [quiz_active, set_quiz_active] = useState(false);
   const [prev_time, set_prev_time] = useState(0);
+  const [name, setName] = useState(null);
 
   
   const { elapsedTime, isRunning, handleStart, handlePause, handleReset } = useTimer();
@@ -53,7 +54,9 @@ const useGame = () => {
     quiz_active,
     answer_question,
     current_question,
-    increment_q
+    increment_q,
+    name,
+    setName
   };
 };
 

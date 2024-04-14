@@ -4,6 +4,7 @@ import "../css/Trivia.css";
 import { useGame } from "../hooks/useGame";
 import Button from 'react-bootstrap/Button';
 import useTimer from "../hooks/useTimer";
+import LForm from "./LForm";
 
 function Trivia() {
   const { total_score, questions, answer_question, current_question, increment_q } = useGame();
@@ -61,17 +62,21 @@ const renderQuestion = (ques, index) => {
           isCorrect={isCorrect}
           disabled={ques.answered}
         />
-      ))}
+      ))
+  }
     </div>
   <p>Time left: {(ques.timer/1000).toFixed(2)+" s"}</p>
   </div>
   )
   
 }
+  else if (current_question == 10){
+    return(<LForm />)
+  }
 }
 
 const next_q = () =>{
-  increment_q();
+    increment_q();
   setIsCorrect(null);
   setAnswerSelected(false);
   setSelectedAnswer(null);
