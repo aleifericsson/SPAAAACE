@@ -79,7 +79,9 @@ const renderQuestion = (ques, index) => {
 }
 
 const next_q = () =>{
+  if (current_question !== 10){
     increment_q();
+  }
   setIsCorrect(null);
   setAnswerSelected(false);
   setSelectedAnswer(null);
