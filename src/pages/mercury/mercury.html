@@ -55,6 +55,11 @@
     .photo:hover img {
       transform: scale(1.05);
     }
+
+    /* Scale the 7th photo to its original size */
+    .photo:nth-child(7) img {
+      transform: scale(1);
+    }
   </style>
 </head>
 <body>
@@ -78,7 +83,9 @@
       <div class="photo">
         <img src="mercury6.jpg" alt="Photo 6">
       </div>
-    
+      <div class="photo">
+        <img src="mercury7.jpg" alt="Photo 7">
+      </div>
     </div>
   </div>
   <div class="iframe-container">
