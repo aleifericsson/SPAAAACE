@@ -106,18 +106,24 @@ function Trivia() {
     }
   };
 
+  const [name, setName] = useState("");
+
   const handleName = (e) => {
     e.preventDefault();
-    const name = e.target.value;
     console.log(name);
+  };
+
+  const handleInputChange = (e) => {
+    setName(e.target.value);
   };
 
   return (
     <>
-      <div className="name">
-        <input type="text" placeholder="Name..." onSubmit={handleName} />
+      <form onSubmit={handleName}>
+        <input type="text" placeholder="Name..." onChange={handleInputChange} />
         <button type="submit">Enter</button>
-      </div>
+      </form>
+
       <div className="user-name"></div>
       <div className="trivia-app">
         <div className="container trivia">
