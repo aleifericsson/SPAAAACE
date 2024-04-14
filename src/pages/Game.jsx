@@ -5,10 +5,10 @@ export default function Game() {
     const {questions} = useGame();
 
     const { unityProvider, isQuizMode, curPlanet} = useUnityContext({
-        loaderUrl: "Build/Sample2DSPaceNoBroccolli.loader.js",
-        dataUrl: "Build/Sample2DSPaceNoBroccolli.data",
-        frameworkUrl: "Build/Sample2DSPaceNoBroccolli.framework.js",
-        codeUrl: "Build/Sample2DSPaceNoBroccolli.wasm",
+        loaderUrl: "Build/3DSolarSystemV2.loader.js",
+        dataUrl: "Build/3DSolarSystemV2.data",
+        frameworkUrl: "Build/3DSolarSystemV2.framework.js",
+        codeUrl: "Build/3DSolarSystemV2.wasm",
       });
 
       console.log(isQuizMode)
