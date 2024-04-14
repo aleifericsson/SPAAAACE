@@ -8,7 +8,7 @@ const useGame = () => {
   const [show_question, set_show_question] = useState(false);
   const [total_score, set_total_score] = useState(0);
   const [questions, set_questions] = useState(generateQuestions());
-  const [current_planet, set_planet] = useState("Sun");
+  const [current_question, set_cur_ques] = useState(-1);
   const [quiz_active, set_quiz_active] = useState(false);
 
   const start_question = (planet_name) => {
@@ -21,9 +21,12 @@ const useGame = () => {
     set_questions(temp);
   };
 
+  const increment_q = () => {
+    set_cur_ques(thing => thing+1);
+  }
+
   const answer_question = (answer, planet_name) => {
     const index = planets.indexOf(planet_name);
-    set_planet(planet_name);
     let temp = [...questions];
     temp[index].answered = true;
     temp[index].counting_down = false;
@@ -48,6 +51,8 @@ const useGame = () => {
     quiz_active,
     start_question,
     answer_question,
+    current_question,
+    increment_q
   };
 };
 

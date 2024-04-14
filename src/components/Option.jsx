@@ -28,8 +28,8 @@ function TextExample({ answer, onClick, isSelected, isCorrect, disabled }) {
 
   return (
     <Card
-      style={{ width: "18rem", height: "10rem", backgroundColor }}
-      className={`option-container ${disabled ? "disabled-option" : ""}`}
+      style={{backgroundColor }}
+      className={`option-container ${disabled ? "disabled-option" : "enabled-option"}`}
       onClick={!disabled ? onClick : undefined}
     >
       <Card.Body>

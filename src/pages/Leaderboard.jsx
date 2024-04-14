@@ -58,12 +58,12 @@ export default function Leaderboard() {
               text-align: center;
             }
 
-.black-thing{
+.black-thing-2{
   position:absolute;
   width: 100vw;
   height: 75px;
   background-color: black;
-  top: calc(100vh - 50px);
+  top: calc(100vh - 70px);
 }
 
 .table{
@@ -77,7 +77,7 @@ export default function Leaderboard() {
             `}
           </style>
         <Solar3D />
-        <div className="black-thing"></div>
+        <div className="black-thing-2"></div>
           <table className="table">
             <caption>Top 10 Quiz Leaderboard</caption>
             <thead>
